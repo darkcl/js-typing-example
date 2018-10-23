@@ -18,4 +18,16 @@ class Person {
   }
 }
 
-sayHello(new Person("World"));
+sayHello(new Person("some", "guy"));
+
+/** @typedef {import('./schema/json').RootObject} RootObject */
+
+const fs = require("fs");
+const path = require("path");
+
+/** @type {RootObject} */
+const p = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "testing.json")).toString()
+);
+
+console.log(p.message);

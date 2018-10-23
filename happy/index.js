@@ -26,8 +26,8 @@ const fs = require("fs");
 const path = require("path");
 
 /** @type {RootObject} */
-const p = JSON.parse(
+const res = JSON.parse(
   fs.readFileSync(path.join(__dirname, "testing.json")).toString()
 );
 
-console.log(p.message);
+console.log(res.message);
